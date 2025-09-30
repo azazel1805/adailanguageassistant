@@ -1,19 +1,20 @@
 
 
 
+
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { useHistory } from '../context/HistoryContext';
-import { getPhrasalVerbOfTheDay, getWeatherForLocation } from '../services/geminiService';
-import { Achievement, DailyChallenge, ChallengeType, PhrasalVerbOfTheDay, WeatherData, Tab } from '../types';
-import Loader from '../components/Loader';
-import ErrorMessage from '../components/ErrorMessage';
-import { useChallenge } from '../context/ChallengeContext';
-import { useVocabulary } from '../context/VocabularyContext';
-import { VocabularyIcon, TargetIcon, FireIcon, PhrasalVerbIcon, LocationIcon, PrepositionIcon } from '../components/icons/Icons';
-import { allAchievements } from '../achievements';
-import Confetti from '../components/Confetti';
-import { useAuth } from '../context/AuthContext';
-import PrepositionVisualizerWidget from '../components/PrepositionVisualizerWidget';
+import { useHistory } from '../context/HistoryContext.tsx';
+import { getPhrasalVerbOfTheDay, getWeatherForLocation } from '../services/geminiService.ts';
+import { Achievement, DailyChallenge, ChallengeType, PhrasalVerbOfTheDay, WeatherData, Tab } from '../types.ts';
+import Loader from '../components/Loader.tsx';
+import ErrorMessage from '../components/ErrorMessage.tsx';
+import { useChallenge } from '../context/ChallengeContext.tsx';
+import { useVocabulary } from '../context/VocabularyContext.tsx';
+import { VocabularyIcon, TargetIcon, FireIcon, PhrasalVerbIcon, LocationIcon, PrepositionIcon } from '../components/icons/Icons.tsx';
+import { allAchievements } from '../achievements.ts';
+import Confetti from '../components/Confetti.tsx';
+import { useAuth } from '../context/AuthContext.tsx';
+import PrepositionVisualizerWidget from '../components/PrepositionVisualizerWidget.tsx';
 
 // Helper hook to get the previous value of a state or prop
 const usePrevious = <T,>(value: T) => {
