@@ -1,40 +1,41 @@
 
 
 
+
 import React, { useState, ReactNode, useEffect } from 'react';
-import Dashboard from './pages/Dashboard';
-import QuestionAnalyzer from './pages/QuestionAnalyzer';
-import AITutor from './pages/AITutor';
-import Dictionary from './pages/Dictionary';
-import History from './pages/History';
-import { HistoryProvider } from './context/HistoryContext';
-import { AnalyzeIcon, DictionaryIcon, HistoryIcon, DashboardIcon, LogoutIcon, TutorIcon, ReadingIcon, WritingIcon, VocabularyIcon, ListeningIcon, MenuIcon, DeconstructIcon, NewsIcon, ExamIcon, PracticeToolsIcon, CohesionIcon, DiagramIcon, PlannerIcon, PDFImporterIcon, StoryIcon, SkillTreeIcon, OrderingIcon, SpeakingSimulatorIcon, PhrasalVerbDeconstructorIcon, AdminIcon, TranslationIcon, DialogueIcon, VisualReadingIcon, CreativeWritingIcon, PragmaticIcon, VisualDictionaryIcon } from './components/icons/Icons';
-import { useAuth } from './context/AuthContext';
-import ReadingPractice from './pages/ReadingPractice';
-import WritingAssistant from './pages/WritingAssistant';
-import VocabularyTrainer from './pages/VocabularyTrainer';
-import ListeningPractice from './pages/ListeningPractice';
-import PassageDeconstruction from './pages/PassageDeconstruction';
-import NewsReader from './pages/NewsReader';
-import { Tab, MockExamResultData } from './types';
-import ParagraphCohesionAnalyzer from './pages/ParagraphCohesionAnalyzer';
-import SentenceDiagrammer from './pages/SentenceDiagrammer';
-import StudyPlanner from './pages/StudyPlanner';
-import PDFImporter from './pages/PDFImporter';
-import VocabularyStoryWeaver from './pages/VocabularyStoryWeaver';
-import SkillTree from './pages/SkillTree';
-import SentenceOrdering from './pages/SentenceOrdering';
-import SpeakingSimulator from './pages/SpeakingSimulator';
-import WelcomeTour from './components/WelcomeTour';
-import useLocalStorage from './hooks/useLocalStorage';
-import PhrasalVerbDeconstructor from './pages/PhrasalVerbDeconstructor';
-import AdminPage from './pages/AdminPage';
-import TranslationAnalyst from './pages/TranslationAnalyst';
-import DialogueCompletion from './pages/DialogueCompletion';
-import VisualReadingTool from './pages/VisualReadingTool';
-import CreativeWritingPartner from './pages/CreativeWritingPartner';
-import PragmaticAnalysisTool from './pages/PragmaticAnalysisTool';
-import VisualDictionary from './pages/VisualDictionary';
+import Dashboard from './pages/Dashboard.tsx';
+import QuestionAnalyzer from './pages/QuestionAnalyzer.tsx';
+import AITutor from './pages/AITutor.tsx';
+import Dictionary from './pages/Dictionary.tsx';
+import History from './pages/History.tsx';
+import { HistoryProvider } from './context/HistoryContext.tsx';
+import { AnalyzeIcon, DictionaryIcon, HistoryIcon, DashboardIcon, LogoutIcon, TutorIcon, ReadingIcon, WritingIcon, VocabularyIcon, ListeningIcon, MenuIcon, DeconstructIcon, NewsIcon, ExamIcon, PracticeToolsIcon, CohesionIcon, DiagramIcon, PlannerIcon, PDFImporterIcon, StoryIcon, SkillTreeIcon, OrderingIcon, SpeakingSimulatorIcon, PhrasalVerbDeconstructorIcon, AdminIcon, TranslationIcon, DialogueIcon, VisualReadingIcon, CreativeWritingIcon, PragmaticIcon, VisualDictionaryIcon } from './components/icons/Icons.tsx';
+import { useAuth } from './context/AuthContext.tsx';
+import ReadingPractice from './pages/ReadingPractice.tsx';
+import WritingAssistant from './pages/WritingAssistant.tsx';
+import VocabularyTrainer from './pages/VocabularyTrainer.tsx';
+import ListeningPractice from './pages/ListeningPractice.tsx';
+import PassageDeconstruction from './pages/PassageDeconstruction.tsx';
+import NewsReader from './pages/NewsReader.tsx';
+import { Tab, MockExamResultData } from './types.ts';
+import ParagraphCohesionAnalyzer from './pages/ParagraphCohesionAnalyzer.tsx';
+import SentenceDiagrammer from './pages/SentenceDiagrammer.tsx';
+import StudyPlanner from './pages/StudyPlanner.tsx';
+import PDFImporter from './pages/PDFImporter.tsx';
+import VocabularyStoryWeaver from './pages/VocabularyStoryWeaver.tsx';
+import SkillTree from './pages/SkillTree.tsx';
+import SentenceOrdering from './pages/SentenceOrdering.tsx';
+import SpeakingSimulator from './pages/SpeakingSimulator.tsx';
+import WelcomeTour from './components/WelcomeTour.tsx';
+import useLocalStorage from './hooks/useLocalStorage.ts';
+import PhrasalVerbDeconstructor from './pages/PhrasalVerbDeconstructor.tsx';
+import AdminPage from './pages/AdminPage.tsx';
+import TranslationAnalyst from './pages/TranslationAnalyst.tsx';
+import DialogueCompletion from './pages/DialogueCompletion.tsx';
+import VisualReadingTool from './pages/VisualReadingTool.tsx';
+import CreativeWritingPartner from './pages/CreativeWritingPartner.tsx';
+import PragmaticAnalysisTool from './pages/PragmaticAnalysisTool.tsx';
+import VisualDictionary from './pages/VisualDictionary.tsx';
 
 const ADAI_FAVICON = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGZpbHRlciBpZD0iZ2xvdy1maWx0ZXIiIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiPjxmZUdhdXNzaWFuQmx1ciBpbj0iU291cmNlQWxwaGEiIHN0ZERldmlhdGlvbj0iMiIgcmVzdWx0PSJibHVyIi8+PGZlRmxvb2QgZmxvb2QtY29sb3I9IiNhODU1ZjciIHJlc3VsdD0iZmxvb2QiLz48ZmVDb21wb3NpdGUgaW49ImZsb29kIiBpbjI9ImJsdXIiIG9wZXJhdG9yPSJpbiIgcmVzdWx0PSJjb2xvcmVkQmx1ciIvPjxmZU1lcmdlPjxmZU1lcmdlTm9kZSBpbj0iY29sb3JlZEJsdXIiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+PC9maWx0ZXI+PC9kZWZzPjxzdHlsZT4uYmFzZS10ZXh0IHsgZm9udDogYm9sZCA0OHB4IHNhbnMtc2VyaWY7IGZpbGw6ICMxZjI5MzcgOyB9IC5pLXRleHQgeyBmb250OiBib2xkIDQ4cHggc2Fucy1zZXJpZjsgZmlsbDogI2MwODRmYzsgfTwvc3R5bGU+PHRleHQgeD0iNTAiIHk9IjYyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj48dHNwYW4gY2xhc3M9ImJhc2UtdGV4dCI+QURBPC90c3Bhbj48dHNwYW4gY2xhc3M9ImktdGV4dCIgZmlsdGVyPSJ1cmwoI2dsb3ctZmlsdGVyKSI+STwvdHNwYW4+PC90ZXh0Pjwvc3ZnPg==";
 
