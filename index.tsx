@@ -1,11 +1,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import { AuthProvider } from './context/AuthContext';
-import { ChallengeProvider } from './context/ChallengeContext';
-import { VocabularyProvider } from './context/VocabularyContext';
-import { ExamHistoryProvider } from './context/ExamHistoryContext';
+import App from './App.tsx';
+import { AuthProvider } from './context/AuthContext.tsx';
+import { ChallengeProvider } from './context/ChallengeContext.tsx';
+import { VocabularyProvider } from './context/VocabularyContext.tsx';
+import { ExamHistoryProvider } from './context/ExamHistoryContext.tsx';
 
 // Register the service worker for PWA functionality
 if ('serviceWorker' in navigator) {
