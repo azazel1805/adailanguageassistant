@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnalysisResult } from '../types';
+import { AnalysisResult } from '../types.ts';
 
 const AnalysisResultDisplay: React.FC<{ result: AnalysisResult }> = ({ result }) => {
     
