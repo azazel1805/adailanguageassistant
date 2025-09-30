@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGZpbHRlciBpZD0iZ2xvdy1maWx0ZXIiIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiPjxmZUdhdXNzaWFuQmx1ciBpbj0iU291cmNlQWxwaGEiIHN0ZERldmlhdGlvbj0iMiIgcmVzdWx0PSJibHVyIi8+PGZlRmxvb2QgZmxvb2QtY29sb3I9IiNhODU1ZjciIHJlc3VsdD0iZmxvb2QiLz48ZmVDb21wb3NpdGUgaW49ImZsb29kIiBpbjI9ImJsdXIiIG9wZXJhdG9yPSJpbiIgcmVzdWx0PSJjb2xvcmVkQmx1ciIvPjxmZU1lcmdlPjxmZU1lcmdlTm9kZSBpbj0iY29sb3JlZEJsdXIiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+PC9maWx0ZXI+PC9kZWZzPjxzdHlsZT4uYmFzZS10ZXh0IHsgZm9udDogYm9sZCA0OHB4IHNhbnMtc2VyaWY7IGZpbGw6ICMxZjI5MzcgOyB9IC5pLXRleHQgeyBmb250OiBib2xkIDQ4cHggc2Fucy1zZXJpZjsgZmlsbDogI2MwODRmYzsgfTwvc3R5bGU+PHRleHQgeD0iNTAiIHk9IjYyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj48dHNwYW4gY2xhc3M9ImJhc2UtdGV4dCI+QURBPC90c3Bhbj48dHNwYW4gY2xhc3M9ImktdGV4dCIgZmlsdGVyPSJ1cmwoI2dsb3ctZmlsdGVyKSI+STwvdHNwYW4+PC90ZXh0Pjwvc3ZnPg==" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGZpbHRlciBpZD0iZ2xvdy1maWx0ZXIiIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiPjxmZUdhdXNzaWFuQmx1ciBpbj0iU291cmNlQWxwaGEiIHN0ZERldmlhdGlvbj0iMiIgcmVzdWx0PSJibHVyIi8+PGZlRmxvb2QgZmxvb2QtY29sb3I9IiNhODU1ZjciIHJlc3VsdD0iZmxvb2QiLz48ZmVDb21wb3NpdGUgaW49ImZsb29kIiBpbjI9ImJsdXIiIG9wZXJhdG9yPSJpbiIgcmVzdWx0PSJjb2xvcmVkQmx1ciIvPjxmZU1lcmdlPjxmZU1lcmdlTm9kZSBpbj0iY29sb3JlZEJsdXIiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+PC9maWx0ZXI+PC9kZWZzPjxzdHlsZT4uYmFzZS10ZXh0IHsgZm9udDogYm9sZCA0OHB4IHNhbnMtc2VyaWY7IGZpbGw6ICMxZjI5MzcgOyB9IC5pLXRleHQgeyBmb250OiBib2xkIDQ4cHggc2Fucy1zZXJpZjsgZmlsbDogI2MwODRmYzsgfTwvc3R5bGU+PHRleHQgeD0iNTAiIHk9IjYyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj48dHNwYW4gY2xhc3M9ImJhc2UtdGV4dCI+QURBPC90c3Bhbj48dHNwYW4gY2xhc3M9ImktdGV4dCIgZmlsdGVyPSJ1cmwoI2dsb3ctZmlsdGVyKSI+STwvdHNwYW4+PC90ZXh0Pjwvc3ZnPg==" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#11182b" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ADAI">
+
+    <!-- Netlify Identity Widget -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <title>ADAI - Language Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#14b8a6', // YDS Teal 500
+              'brand-secondary': '#0f766e', // YDS Teal 700
+              'adai-primary': '#6366f1', // ADAI Indigo 500
+              'adai-secondary': '#4338ca', // ADAI Indigo 700
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        .special-glow {
+            color: #c084fc; /* purple-400 */
+            text-shadow: 0 0 5px #c084fc, 0 0 10px #c084fc, 0 0 15px #a855f7;
+        }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0",
+    "netlify-identity-widget": "https://aistudiocdn.com/netlify-identity-widget@^1.9.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-950 dark:bg-slate-900 dark:text-slate-50">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

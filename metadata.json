@@ -1,0 +1,8 @@
+{
+  "name": "ADAI Language Assistant 3.0",
+  "description": "An AI-powered assistant for YDS exam preparation and general English learning.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
