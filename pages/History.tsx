@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from '../context/HistoryContext';
-import { HistoryItem } from '../types';
-import AnalysisResultDisplay from '../components/AnalysisResultDisplay';
+import { useHistory } from '../context/HistoryContext.tsx';
+import { HistoryItem } from '../types.ts';
+import AnalysisResultDisplay from '../components/AnalysisResultDisplay.tsx';
 
 const History: React.FC = () => {
   const { history, clearHistory } = useHistory();
