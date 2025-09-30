@@ -1,8 +1,8 @@
 
 import React, { createContext, useContext, ReactNode, useEffect, useCallback } from 'react';
-import useLocalStorage from '../hooks/useLocalStorage';
-import { useAuth } from './AuthContext';
-import { ChallengeState, ChallengeType, DailyChallenge } from '../types';
+import useLocalStorage from '../hooks/useLocalStorage.ts';
+import { useAuth } from './AuthContext.tsx';
+import { ChallengeState, ChallengeType, DailyChallenge } from '../types.ts';
 
 const getTodayDateString = () => new Date().toISOString().split('T')[0];
 
@@ -16,7 +16,8 @@ const ChallengeContext = createContext<ChallengeContextType | undefined>(undefin
 
 export const ChallengeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const { user } = useAuth();
-    const challengeKey = user ? `challenge-state-${user}` : 'challenge-state-guest';
+    // FIX: Use user.email for a unique key per user, not the user object itself.
+    const challengeKey = user ? `challenge-state-${user.email}` : 'challenge-state-guest';
     
     const initialState: ChallengeState = {
         currentChallenge: null,
