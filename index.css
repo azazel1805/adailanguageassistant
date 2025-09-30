@@ -1,0 +1,57 @@
+/* index.css */
+
+/* Define CSS variables for theming */
+:root {
+  --color-bg-secondary: #ffffff; /* white */
+  --color-text-primary: #0f172a; /* slate-900 */
+  --color-text-secondary: #475569; /* slate-600 */
+}
+
+.dark {
+  --color-bg-secondary: #1e293b;  /* slate-800 */
+  --color-text-primary: #f8fafc;   /* slate-50 */
+  --color-text-secondary: #94a3b8;  /* slate-400 */
+}
+
+/* Custom animations found in components */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* A fix for the Netlify Identity Widget in dark mode */
+.dark .netlify-identity-modal {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+.dark .netlify-identity-menu {
+  background-color: #1e293b !important; /* slate-800 */
+  color: #f8fafc !important; /* slate-50 */
+}
+.dark .netlify-identity-menu label,
+.dark .netlify-identity-menu .btn,
+.dark .netlify-identity-menu button {
+  color: #f8fafc !important;
+}
+.dark .netlify-identity-menu input {
+  background-color: #334155 !important; /* slate-700 */
+  color: #f8fafc !important;
+  border-color: #475569 !important; /* slate-600 */
+}
+.dark .netlify-identity-menu button.btn,
+.dark .netlify-identity-menu button.btn-primary {
+    background-color: #6366f1 !important; /* adai-primary */
+    border-color: #6366f1 !important;
+}
