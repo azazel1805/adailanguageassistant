@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { analyzeQuestion, generateSimilarQuiz } from '../services/geminiService';
-import { useHistory } from '../context/HistoryContext';
-import Loader from '../components/Loader';
-import ErrorMessage from '../components/ErrorMessage';
-import { AnalysisResult, ParsedQuestion } from '../types';
-import AnalysisResultDisplay from '../components/AnalysisResultDisplay';
-import { useChallenge } from '../context/ChallengeContext';
-import { parseGeneratedQuestions } from '../utils/questionParser';
+import { analyzeQuestion, generateSimilarQuiz } from '../services/geminiService.ts';
+import { useHistory } from '../context/HistoryContext.tsx';
+import Loader from '../components/Loader.tsx';
+import ErrorMessage from '../components/ErrorMessage.tsx';
+import { AnalysisResult, ParsedQuestion } from '../types.ts';
+import AnalysisResultDisplay from '../components/AnalysisResultDisplay.tsx';
+import { useChallenge } from '../context/ChallengeContext.tsx';
+import { parseGeneratedQuestions } from '../utils/questionParser.ts';
 
 interface QuizState {
   questions: ParsedQuestion[];
