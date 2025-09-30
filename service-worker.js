@@ -5,8 +5,10 @@ const CACHE_NAME = 'yds-ai-assistant-cache-v1';
 // This is the "app shell" - the minimal resources needed for the app to start.
 const urlsToCache = [
   '/',
-  'index.html',
-  'index.tsx', // Represents the main JavaScript bundle
+  '/index.html',
+  '/index.js',
+  '/index.css',
+  '/manifest.json'
 ];
 
 // Install event: cache the application shell.
@@ -46,6 +48,13 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') {
     return;
   }
+  
+  // This is a basic cache-first strategy. It's not ideal for all assets.
+  // We only cache same-origin requests to avoid caching external APIs.
+  const requestUrl = new URL(event.request.url);
+  if (requestUrl.origin !== self.location.origin) {
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request)
@@ -59,7 +68,6 @@ self.addEventListener('fetch', (event) => {
         return fetch(event.request).then(
           (response) => {
             // If the fetch was unsuccessful, don't cache anything.
-            // Note: Caching opaque responses (like from CDNs) is possible but requires care.
             if (!response || response.status !== 200) {
               return response;
             }
