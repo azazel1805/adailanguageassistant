@@ -1,8 +1,8 @@
 
 import React, { createContext, useContext, ReactNode } from 'react';
-import useLocalStorage from '../hooks/useLocalStorage';
-import { HistoryItem, AnalysisResult } from '../types';
-import { useAuth } from './AuthContext';
+import useLocalStorage from '../hooks/useLocalStorage.ts';
+import { HistoryItem, AnalysisResult } from '../types.ts';
+import { useAuth } from './AuthContext.tsx';
 
 interface HistoryContextType {
   history: HistoryItem[];
@@ -14,8 +14,8 @@ const HistoryContext = createContext<HistoryContextType | undefined>(undefined);
 
 export const HistoryProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { user } = useAuth();
-  // Fallback key 'guest' is not ideal, but prevents crash if user is somehow null
-  const historyKey = user ? `yds-analysis-history-${user}` : 'yds-analysis-history-guest'; 
+  // FIX: Use user.email for a unique key per user, not the user object itself.
+  const historyKey = user ? `yds-analysis-history-${user.email}` : 'yds-analysis-history-guest'; 
   
   const [history, setHistory] = useLocalStorage<HistoryItem[]>(historyKey, []);
 
