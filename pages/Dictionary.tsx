@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { getDictionaryEntry } from '../services/geminiService';
-import Loader from '../components/Loader';
-import ErrorMessage from '../components/ErrorMessage';
-import { SpeakerIcon } from '../components/icons/Icons';
-import { useChallenge } from '../context/ChallengeContext';
-import { useVocabulary } from '../context/VocabularyContext';
-import { DictionaryEntry } from '../types';
+import { getDictionaryEntry } from '../services/geminiService.ts';
+import Loader from '../components/Loader.tsx';
+import ErrorMessage from '../components/ErrorMessage.tsx';
+import { SpeakerIcon } from '../components/icons/Icons.tsx';
+import { useChallenge } from '../context/ChallengeContext.tsx';
+import { useVocabulary } from '../context/VocabularyContext.tsx';
+import { DictionaryEntry } from '../types.ts';
 
 const PEXELS_API_KEY = 'BXJTqpDqYKrp57GTOT012YKebRMmDDGBfDVHoUDu3gdNNwr13TMbJLWq';
 
